@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+		<title>MyData: Own your own data</title>
+		<link rel="shortcut icon" href="/favicon.png" />
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<!--<link href="/lib/bootstrap.min.css" rel="stylesheet" />-->
+
+		<link rel="stylesheet" type="text/css" href="/style/main.css">
+		<link rel="stylesheet" type="text/css" href="/style/print.css" media="print">	
+		<style>
+			#mainDiv .btn.btn-outline-primary.active {
+				background-color: #004bcf;
+			}
+		</style>	
+	</head>
+	<body>
+<nav class="navbar navbar-dark bg-dark">
+	<div class="container justify-content-center">
+		<a href="https://www.good-loop.com" class="navbar-brand">
+			<img alt="Good-Loop logo" class="logo gl-logo" src="img/logo.png">
+			<div class="navbar-text logotype">My-Data by Good-Loop</div>
+		</a>
+	</div>
+</nav>
+
+		<div id="mainDiv"></div>
+
+		<footer class="footer">
+			<div class="col-md-12">
+				<center>
+					<img alt="logo" class="logo-footer" src="img/logo.png" />
+					<p class="text-muted">
+						&copy; 2018 <a href='https://www.good-loop.com'>Good-Loop</a>
+					</p>
+				</center>
+			</div>
+		</footer>
+
+		<!-- Scripts -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<!-- script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.min.js"></script -->		
+		<!-- everything else comes via webpack -->
+		<script>
+			// never cache in dev
+			var cachebuster = '';
+			if (window.location.host.indexOf('local') !== -1 || window.location.host.indexOf('test') !== -1) {
+				cachebuster = Math.round(Math.random()*100000);
+			}
+			let script = document.createElement('script');
+			script.type = 'text/javascript';
+			script.src = "/build/js/bundle.js?cachebuster="+cachebuster;
+			var head = document.getElementsByTagName("head")[0];
+			(head || document.body).appendChild(script);
+		</script>
+
+	</body>
+</html>
