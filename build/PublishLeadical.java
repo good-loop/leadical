@@ -63,15 +63,15 @@ import jobs.BuildWinterwellProject;
 
 /**
  */
-public class PublishMydata extends PublishProjectTask {
+public class PublishLeadical extends PublishProjectTask {
 	
 	@Override
 	public List<BuildTask> getDependencies() {
 		return new ArrayList(); // no java server (yet)
 	}
 	
-	public PublishMydata() throws Exception {
-		super("mydata", "/home/winterwell/mydata");
+	public PublishLeadical() throws Exception {
+		super("leadical", "/home/winterwell/leadical");
 		bashScript = "./publish-webapp.sh";
 		typeOfPublish = KPubType.production;
 //		codePart = "backend";
